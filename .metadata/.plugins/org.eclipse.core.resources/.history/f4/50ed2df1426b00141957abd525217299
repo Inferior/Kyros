@@ -1,0 +1,55 @@
+/**
+ * 
+ */
+package org.asd.kyros.server.alpha;
+
+import org.asd.kyros.shared.alpha.AddressFormData;
+import org.asd.kyros.shared.alpha.CreateAddressPermission;
+import org.asd.kyros.shared.alpha.IAddressService;
+import org.asd.kyros.shared.alpha.ReadAddressPermission;
+import org.asd.kyros.shared.alpha.UpdateAddressPermission;
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.commons.exception.VetoException;
+import org.eclipse.scout.rt.shared.TEXTS;
+import org.eclipse.scout.rt.shared.services.common.security.ACCESS;
+import org.eclipse.scout.service.AbstractService;
+
+/**
+ * @author AndrewL
+ *
+ */
+public class AddressService extends AbstractService implements IAddressService{
+
+@Override
+public AddressFormData create(AddressFormData formData) throws ProcessingException{
+if(!ACCESS.check(new CreateAddressPermission())){
+throw new VetoException(TEXTS.get("AuthorizationFailed"));
+}
+//TODO [AndrewL] business logic here.
+return formData;
+}
+@Override
+public AddressFormData load(AddressFormData formData) throws ProcessingException{
+if(!ACCESS.check(new ReadAddressPermission())){
+throw new VetoException(TEXTS.get("AuthorizationFailed"));
+}
+//TODO [AndrewL] business logic here.
+return formData;
+}
+@Override
+public AddressFormData prepareCreate(AddressFormData formData) throws ProcessingException{
+if(!ACCESS.check(new CreateAddressPermission())){
+throw new VetoException(TEXTS.get("AuthorizationFailed"));
+}
+//TODO [AndrewL] business logic here.
+return formData;
+}
+@Override
+public AddressFormData store(AddressFormData formData) throws ProcessingException{
+if(!ACCESS.check(new UpdateAddressPermission())){
+throw new VetoException(TEXTS.get("AuthorizationFailed"));
+}
+//TODO [AndrewL] business logic here.
+return formData;
+}
+}

@@ -1,0 +1,44 @@
+/**
+ * 
+ */
+package org.asd.kyros.shared.delta;
+
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.rt.shared.validate.IValidationStrategy;
+import org.eclipse.scout.rt.shared.validate.InputValidation;
+import org.eclipse.scout.service.IService;
+
+/**
+ * @author AndrewL
+ */
+@InputValidation(IValidationStrategy.PROCESS.class)
+public interface IFinishTypeService extends IService {
+
+  /**
+   * @param formData
+   * @return
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  FinishTypeFormData create(FinishTypeFormData formData) throws ProcessingException;
+
+  /**
+   * @param formData
+   * @return
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  FinishTypeFormData load(FinishTypeFormData formData) throws ProcessingException;
+
+  /**
+   * @param formData
+   * @return
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  FinishTypeFormData prepareCreate(FinishTypeFormData formData) throws ProcessingException;
+
+  /**
+   * @param formData
+   * @return
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  FinishTypeFormData store(FinishTypeFormData formData) throws ProcessingException;
+}

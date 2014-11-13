@@ -1,0 +1,60 @@
+/**
+ *
+ */
+package org.asd.kyros.server.alpha;
+
+import org.asd.kyros.shared.alpha.ContactFormData;
+import org.asd.kyros.shared.alpha.CreateContactPermission;
+import org.asd.kyros.shared.alpha.IContactService;
+import org.asd.kyros.shared.alpha.ReadContactPermission;
+import org.asd.kyros.shared.alpha.UpdateContactPermission;
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.commons.exception.VetoException;
+import org.eclipse.scout.rt.server.services.common.jdbc.SQL;
+import org.eclipse.scout.rt.shared.TEXTS;
+import org.eclipse.scout.rt.shared.services.common.security.ACCESS;
+import org.eclipse.scout.service.AbstractService;
+
+/**
+ * @author AndrewL
+ */
+public class ContactService extends AbstractService implements IContactService {
+
+  @Override
+  public ContactFormData create(ContactFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new CreateContactPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    SQL.insert("" +
+        "INSERT INTO CONTACT (CONTACT_FIRST, CONTACT_LAST, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_FAX, CONTACT_TYPE, COMPANY_ID, DIVISION_ID) " +
+        "VALUES (:firstName, :lastName, :email, :phoneNumber, :faxNumber, :type, :company, :division)", formData);
+    return formData;
+  }
+
+  @Override
+  public ContactFormData load(ContactFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new ReadContactPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    //TODO [AndrewL] business logic here.
+    return formData;
+  }
+
+  @Override
+  public ContactFormData prepareCreate(ContactFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new CreateContactPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    //TODO [AndrewL] business logic here.
+    return formData;
+  }
+
+  @Override
+  public ContactFormData store(ContactFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new UpdateContactPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    //TODO [AndrewL] business logic here.
+    return formData;
+  }
+}

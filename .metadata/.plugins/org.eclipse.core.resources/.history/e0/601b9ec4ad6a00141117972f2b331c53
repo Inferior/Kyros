@@ -1,0 +1,275 @@
+/**
+ * 
+ */
+package org.asd.kyros.client.alpha;
+
+import org.asd.kyros.client.alpha.ProcessForm.MainBox.CancelButton;
+import org.asd.kyros.client.alpha.ProcessForm.MainBox.GeneralBox;
+import org.asd.kyros.client.alpha.ProcessForm.MainBox.GeneralBox.CommonNameField;
+import org.asd.kyros.client.alpha.ProcessForm.MainBox.GeneralBox.HolderOneField;
+import org.asd.kyros.client.alpha.ProcessForm.MainBox.GeneralBox.HolderTwoField;
+import org.asd.kyros.client.alpha.ProcessForm.MainBox.GeneralBox.ProcessNameField;
+import org.asd.kyros.client.alpha.ProcessForm.MainBox.GeneralBox.ProcessTypeField;
+import org.asd.kyros.client.alpha.ProcessForm.MainBox.OkButton;
+import org.asd.kyros.shared.alpha.IProcessService;
+import org.asd.kyros.shared.alpha.ProcessFormData;
+import org.asd.kyros.shared.alpha.UpdateProcessPermission;
+import org.asd.kyros.shared.delta.ProcessTypeLookupCall;
+import org.eclipse.scout.commons.annotations.FormData;
+import org.eclipse.scout.commons.annotations.Order;
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.rt.client.ui.form.AbstractForm;
+import org.eclipse.scout.rt.client.ui.form.AbstractFormHandler;
+import org.eclipse.scout.rt.client.ui.form.fields.button.AbstractCancelButton;
+import org.eclipse.scout.rt.client.ui.form.fields.button.AbstractOkButton;
+import org.eclipse.scout.rt.client.ui.form.fields.groupbox.AbstractGroupBox;
+import org.eclipse.scout.rt.client.ui.form.fields.groupbox.IGroupBoxBodyGrid;
+import org.eclipse.scout.rt.client.ui.form.fields.groupbox.internal.HorizontalGroupBoxBodyGrid;
+import org.eclipse.scout.rt.client.ui.form.fields.placeholder.AbstractPlaceholderField;
+import org.eclipse.scout.rt.client.ui.form.fields.smartfield.AbstractSmartField;
+import org.eclipse.scout.rt.client.ui.form.fields.stringfield.AbstractStringField;
+import org.eclipse.scout.rt.shared.TEXTS;
+import org.eclipse.scout.rt.shared.services.lookup.ILookupCall;
+import org.eclipse.scout.service.SERVICES;
+
+/**
+ * @author AndrewL
+ */
+@FormData(value = ProcessFormData.class, sdkCommand = FormData.SdkCommand.CREATE)
+public class ProcessForm extends AbstractForm {
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public ProcessForm() throws ProcessingException {
+    super();
+  }
+
+  @Override
+  protected String getConfiguredTitle() {
+    return TEXTS.get("Process");
+  }
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public void startModify() throws ProcessingException {
+    startInternal(new ModifyHandler());
+  }
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public void startNew() throws ProcessingException {
+    startInternal(new NewHandler());
+  }
+
+  /**
+   * @return the CancelButton
+   */
+  public CancelButton getCancelButton() {
+    return getFieldByClass(CancelButton.class);
+  }
+
+  /**
+   * @return the CommonNameField
+   */
+  public CommonNameField getCommonNameField(){
+    return getFieldByClass(CommonNameField.class);
+  }
+
+  /**
+   * @return the GeneralBox
+   */
+  public GeneralBox getGeneralBox(){
+    return getFieldByClass(GeneralBox.class);
+  }
+
+  /**
+   * @return the HolderOneField
+   */
+  public HolderOneField getHolderOneField(){
+    return getFieldByClass(HolderOneField.class);
+  }
+
+  /**
+   * @return the HolderTwoField
+   */
+  public HolderTwoField getHolderTwoField(){
+    return getFieldByClass(HolderTwoField.class);
+  }
+
+  /**
+   * @return the MainBox
+   */
+  public MainBox getMainBox() {
+    return getFieldByClass(MainBox.class);
+  }
+
+  /**
+   * @return the OkButton
+   */
+  public OkButton getOkButton() {
+    return getFieldByClass(OkButton.class);
+  }
+
+  /**
+   * @return the ProcessNameField
+   */
+  public ProcessNameField getProcessNameField(){
+    return getFieldByClass(ProcessNameField.class);
+  }
+
+  /**
+   * @return the ProcessTypeField
+   */
+  public ProcessTypeField getProcessTypeField(){
+    return getFieldByClass(ProcessTypeField.class);
+  }
+
+  @Order(10.0)
+  public class MainBox extends AbstractGroupBox {
+
+    @Order(10.0)
+    public class GeneralBox extends AbstractGroupBox {
+
+      @Override
+      protected Class<? extends IGroupBoxBodyGrid> getConfiguredBodyGrid() {
+        return HorizontalGroupBoxBodyGrid.class;
+      }
+
+      @Override
+      protected int getConfiguredGridColumnCount() {
+        return 3;
+      }
+
+      @Override
+      protected String getConfiguredLabel() {
+        return TEXTS.get("General");
+      }
+
+      @Override
+      protected boolean getConfiguredLabelVisible() {
+        return false;
+      }
+
+      @Order(10.0)
+      public class ProcessTypeField extends AbstractSmartField<Long> {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("ProcessType");
+        }
+
+        @Override
+        protected int getConfiguredLabelPosition() {
+          return LABEL_POSITION_TOP;
+        }
+
+        @Override
+        protected Class<? extends ILookupCall<Long>> getConfiguredLookupCall() {
+          return ProcessTypeLookupCall.class;
+        }
+      }
+
+      @Order(20.0)
+      public class HolderOneField extends AbstractPlaceholderField {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("HolderOne");
+        }
+      }
+
+      @Order(30.0)
+      public class HolderTwoField extends AbstractPlaceholderField {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("HolderTwo");
+        }
+      }
+
+      @Order(40.0)
+      public class ProcessNameField extends AbstractStringField {
+
+        @Override
+        protected int getConfiguredGridW() {
+          return 2;
+        }
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("ProcessName");
+        }
+
+        @Override
+        protected int getConfiguredLabelPosition() {
+          return LABEL_POSITION_TOP;
+        }
+      }
+
+      @Order(50.0)
+      public class CommonNameField extends AbstractStringField {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("CommonName");
+        }
+      }
+    }
+
+    @Order(20.0)
+    public class OkButton extends AbstractOkButton {
+    }
+
+    @Order(30.0)
+    public class CancelButton extends AbstractCancelButton {
+    }
+  }
+
+  public class ModifyHandler extends AbstractFormHandler {
+
+    @Override
+    protected void execLoad() throws ProcessingException {
+      IProcessService service = SERVICES.getService(IProcessService.class);
+      ProcessFormData formData = new ProcessFormData();
+      exportFormData(formData);
+      formData = service.load(formData);
+      importFormData(formData);
+      setEnabledPermission(new UpdateProcessPermission());
+
+    }
+
+    @Override
+    protected void execStore() throws ProcessingException {
+      IProcessService service = SERVICES.getService(IProcessService.class);
+      ProcessFormData formData = new ProcessFormData();
+      exportFormData(formData);
+      formData = service.store(formData);
+
+    }
+  }
+
+  public class NewHandler extends AbstractFormHandler {
+
+    @Override
+    protected void execLoad() throws ProcessingException {
+      IProcessService service = SERVICES.getService(IProcessService.class);
+      ProcessFormData formData = new ProcessFormData();
+      exportFormData(formData);
+      formData = service.prepareCreate(formData);
+      importFormData(formData);
+
+    }
+
+    @Override
+    protected void execStore() throws ProcessingException {
+      IProcessService service = SERVICES.getService(IProcessService.class);
+      ProcessFormData formData = new ProcessFormData();
+      exportFormData(formData);
+      formData = service.create(formData);
+
+    }
+  }
+}

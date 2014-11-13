@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package org.asd.kyros.server.delta;
+
+import org.asd.kyros.shared.delta.ICompanyLookupService;
+import org.eclipse.scout.rt.server.services.lookup.AbstractSqlLookupService;
+
+/**
+ * @author AndrewL
+ */
+public class CompanyLookupService extends AbstractSqlLookupService<Long> implements ICompanyLookupService {
+
+  @Override
+  protected String getConfiguredSqlSelect() {
+    return ""; //TODO [AndrewL] write select statement here.
+
+  }
+}

@@ -1,0 +1,59 @@
+/**
+ * 
+ */
+package org.asd.kyros.server.alpha;
+
+import org.asd.kyros.shared.alpha.CreateSpecificationPermission;
+import org.asd.kyros.shared.alpha.ISpecificationService;
+import org.asd.kyros.shared.alpha.ReadSpecificationPermission;
+import org.asd.kyros.shared.alpha.SpecificationFormData;
+import org.asd.kyros.shared.alpha.UpdateSpecificationPermission;
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.commons.exception.VetoException;
+import org.eclipse.scout.rt.shared.TEXTS;
+import org.eclipse.scout.rt.shared.services.common.security.ACCESS;
+import org.eclipse.scout.service.AbstractService;
+
+/**
+ * @author AndrewL
+ */
+public class SpecificationService extends AbstractService implements ISpecificationService {
+
+  @Override
+  public SpecificationFormData create(SpecificationFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new CreateSpecificationPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    SQL.insert("" + 
+        "INSERT INTO SPECIFICATION (SPEC_NUMBER, SPEC_REVISION, SPEC_DISPLAY, SPEC_DATE, SPEC_STATUS, SPEC_SUPERSEEDED, SPEC_SCOPE, SPEC_CATEGORY, SPEC_SEARCH, SPEC_URL, ISSUINGCOMPANY_IC_ID) "+
+        "VALUES (:number, :revision, ##_DISPLAY_##, :issueDate, :status, :superseededBy, :scope, :category, :searchWord, :filePath, :issuingCompany)", formData);
+    return formData;
+  }
+
+  @Override
+  public SpecificationFormData load(SpecificationFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new ReadSpecificationPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    //TODO [AndrewL] business logic here.
+    return formData;
+  }
+
+  @Override
+  public SpecificationFormData prepareCreate(SpecificationFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new CreateSpecificationPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    //TODO [AndrewL] business logic here.
+    return formData;
+  }
+
+  @Override
+  public SpecificationFormData store(SpecificationFormData formData) throws ProcessingException {
+    if (!ACCESS.check(new UpdateSpecificationPermission())) {
+      throw new VetoException(TEXTS.get("AuthorizationFailed"));
+    }
+    //TODO [AndrewL] business logic here.
+    return formData;
+  }
+}

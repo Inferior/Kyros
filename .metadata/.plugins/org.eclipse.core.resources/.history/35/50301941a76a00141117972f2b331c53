@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package org.asd.kyros.server.delta;
+
+import org.asd.kyros.shared.delta.IMaterialTypeLookupService;
+import org.eclipse.scout.rt.server.services.lookup.AbstractSqlLookupService;
+
+/**
+ * @author AndrewL
+ */
+public class MaterialTypeLookupService extends AbstractSqlLookupService<Long> implements IMaterialTypeLookupService {
+
+  @Override
+  protected String getConfiguredSqlSelect() {
+    return ""; //TODO [AndrewL] write select statement here.
+
+  }
+}

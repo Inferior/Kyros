@@ -1,0 +1,119 @@
+/**
+ * 
+ */
+package org.asd.kyros.shared.delta;
+
+import org.eclipse.scout.commons.annotations.Order;
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.rt.shared.TEXTS;
+import org.eclipse.scout.rt.shared.services.common.code.AbstractCode;
+import org.eclipse.scout.rt.shared.services.common.code.AbstractCodeType;
+
+/**
+ * @author AndrewL
+ */
+public class ContactClassificationCodeType extends AbstractCodeType<Integer, Integer> {
+
+  private static final long serialVersionUID = 1L;
+  /**
+ * 
+ */
+  public static final Integer ID = 500;
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public ContactClassificationCodeType() throws ProcessingException {
+    super();
+  }
+
+  @Override
+  protected String getConfiguredText() {
+    return TEXTS.get("ContactClassification");
+  }
+
+  @Override
+  public Integer getId() {
+    return ID;
+  }
+
+  @Order(10.0)
+  public static class BuyerCode extends AbstractCode<Integer> {
+
+    private static final long serialVersionUID = 1L;
+    /**
+   * 
+   */
+    public static final Integer ID = 501;
+
+    @Override
+    protected String getConfiguredText() {
+      return TEXTS.get("Buyer");
+    }
+
+    @Override
+    public Integer getId() {
+      return ID;
+    }
+  }
+
+  @Order(20.0)
+  public static class RepresentativeCode extends AbstractCode<Integer> {
+
+    private static final long serialVersionUID = 1L;
+    /**
+   * 
+   */
+    public static final Integer ID = 502;
+
+    @Override
+    protected String getConfiguredText() {
+      return TEXTS.get("Representative");
+    }
+
+    @Override
+    public Integer getId() {
+      return ID;
+    }
+  }
+
+  @Order(30.0)
+  public static class ProjectManagerCode extends AbstractCode<Integer> {
+
+    private static final long serialVersionUID = 1L;
+    /**
+   * 
+   */
+    public static final Integer ID = 503;
+
+    @Override
+    protected String getConfiguredText() {
+      return TEXTS.get("ProjectManager");
+    }
+
+    @Override
+    public Integer getId() {
+      return ID;
+    }
+  }
+
+  @Order(40.0)
+  public static class EngineerCode extends AbstractCode<Integer> {
+
+    private static final long serialVersionUID = 1L;
+    /**
+   * 
+   */
+    public static final Integer ID = 504;
+
+    @Override
+    protected String getConfiguredText() {
+      return TEXTS.get("Engineer");
+    }
+
+    @Override
+    public Integer getId() {
+      return ID;
+    }
+  }
+}

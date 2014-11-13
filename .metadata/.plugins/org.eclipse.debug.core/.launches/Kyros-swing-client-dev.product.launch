@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.RuntimeWorkbench">
+<booleanAttribute key="append.args" value="true"/>
+<stringAttribute key="application" value="org.asd.kyros.ui.swing.app"/>
+<booleanAttribute key="askclear" value="true"/>
+<booleanAttribute key="automaticAdd" value="false"/>
+<booleanAttribute key="clearws" value="false"/>
+<booleanAttribute key="clearwslog" value="false"/>
+<booleanAttribute key="default" value="false"/>
+<stringAttribute key="location" value="${workspace_loc}/../runtime-Kyros-swing-client-dev.product"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xms256m -Xmx512m  -Xms64m"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<stringAttribute key="product" value="org.asd.kyros.ui.swing.product"/>
+<stringAttribute key="productFile" value="\org.asd.kyros.ui.swing\products\development\Kyros-swing-client-dev.product"/>
+<stringAttribute key="selected_target_plugins" value="org.eclipse.osgi*3.10.1.v20140909-1633@default:default,org.apache.batik.ext.awt*1.7.0.v201011041433@default:default,org.eclipse.equinox.registry@default:default,org.eclipse.core.jobs@default:default,org.eclipse.core.net@default:default,org.apache.batik.xml*1.7.0.v201011041433@default:default,org.w3c.css.sac@default:default,org.eclipse.scout.rt.shared*4.0.100.20140912-1409@default:default,org.apache.batik.parser*1.7.0.v201011041433@default:default,org.w3c.dom.smil*1.0.1.v200903091627@default:default,org.eclipse.equinox.security.win32.x86_64@default:default,org.apache.batik.dom*1.7.0.v201011041433@default:default,org.apache.batik.dom.svg*1.7.0.v201011041433@default:default,org.w3c.dom.events@default:default,org.apache.batik.svggen*1.7.0.v201011041433@default:default,org.apache.batik.swing@default:default,javax.xml@default:default,org.apache.batik.bridge*1.7.0.v201011041433@default:default,org.eclipse.equinox.app@default:default,org.eclipse.scout.svg.client*4.0.100.20140829-1424@default:default,org.eclipse.equinox.security@default:default,org.eclipse.scout.net*4.0.100.20140829-1424@default:default,org.eclipse.equinox.preferences@default:default,org.w3c.dom.svg@default:default,org.apache.batik.transcoder*1.7.0.v201011041433@default:default,org.apache.batik.util*1.7.0.v201011041433@default:default,org.eclipse.scout.rt.extension.client*4.0.100.20140829-1424@default:default,org.eclipse.scout.service*4.0.100.20140829-1424@default:default,org.eclipse.scout.svg.ui.swing*4.0.100.20140829-1424@default:default,org.apache.batik.util.gui*1.7.0.v200903091627@default:default,org.eclipse.osgi.services@default:default,org.eclipse.equinox.common@default:default,org.eclipse.swt*3.103.1.v20140903-1938@default:default,com.bsiag.scout.rt.ui.swing.rayo@default:default,org.eclipse.scout.rt.servicetunnel*4.0.100.20140829-1424@default:default,org.eclipse.scout.rt.ui.swing*4.0.100.20140902-1255@default:default,org.eclipse.update.configurator@default:default,com.bsiag.scout.rt.ui.swing.laf.rayo.fragment@default:default,org.apache.batik.css*1.7.0.v201011041433@default:default,org.eclipse.scout.commons*4.0.100.20140829-1424@default:default,org.eclipse.scout.rt.client*4.0.100.20140912-1251@default:default,org.eclipse.scout.rt.ui.swing.browser.swt.fragment*4.0.100.20140829-1424@default:default,org.eclipse.swt.win32.win32.x86_64*3.103.1.v20140903-1947@default:default,org.eclipse.core.runtime@default:default,org.eclipse.scout.org.w3c.dom.svg.fragment*4.0.100.20140829-1424@default:default,org.eclipse.core.contenttype@default:default,"/>
+<stringAttribute key="selected_workspace_plugins" value="org.asd.kyros.client@default:default,org.asd.kyros.ui.swing@default:default,org.asd.kyros.shared@default:default,"/>
+<stringAttribute key="templateConfig" value="C:\app\Git\Kyros\org.asd.kyros.ui.swing\products\development\config.ini"/>
+<booleanAttribute key="useDefaultConfig" value="false"/>
+<booleanAttribute key="useProduct" value="true"/>
+<booleanAttribute key="usefeatures" value="false"/>
+</launchConfiguration>

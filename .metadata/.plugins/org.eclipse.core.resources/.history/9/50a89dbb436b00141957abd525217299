@@ -1,0 +1,390 @@
+/**
+ * 
+ */
+package org.asd.kyros.client.alpha;
+
+import org.asd.kyros.client.alpha.AddressForm.MainBox.CancelButton;
+import org.asd.kyros.client.alpha.AddressForm.MainBox.GeneralBox;
+import org.asd.kyros.client.alpha.AddressForm.MainBox.GeneralBox.BillingBox;
+import org.asd.kyros.client.alpha.AddressForm.MainBox.GeneralBox.CompanyField;
+import org.asd.kyros.client.alpha.AddressForm.MainBox.GeneralBox.DivisionField;
+import org.asd.kyros.client.alpha.AddressForm.MainBox.GeneralBox.ShippingBox;
+import org.asd.kyros.client.alpha.AddressForm.MainBox.GeneralBox.ShippingBox.ShippingAddressField;
+import org.asd.kyros.client.alpha.AddressForm.MainBox.GeneralBox.ShippingBox.ShippingCommentsField;
+import org.asd.kyros.client.alpha.AddressForm.MainBox.GeneralBox.ShippingBox.ShippingStateField;
+import org.asd.kyros.client.alpha.AddressForm.MainBox.GeneralBox.ShippingBox.ShippingZipCodeField;
+import org.asd.kyros.client.alpha.AddressForm.MainBox.OkButton;
+import org.asd.kyros.shared.alpha.AddressFormData;
+import org.asd.kyros.shared.alpha.IAddressService;
+import org.asd.kyros.shared.alpha.UpdateAddressPermission;
+import org.asd.kyros.shared.delta.CompanyLookupCall;
+import org.asd.kyros.shared.delta.DivisionFromCompanyLookupCall;
+import org.eclipse.scout.commons.annotations.FormData;
+import org.eclipse.scout.commons.annotations.Order;
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.rt.client.ui.form.AbstractForm;
+import org.eclipse.scout.rt.client.ui.form.AbstractFormHandler;
+import org.eclipse.scout.rt.client.ui.form.fields.IValueField;
+import org.eclipse.scout.rt.client.ui.form.fields.button.AbstractCancelButton;
+import org.eclipse.scout.rt.client.ui.form.fields.button.AbstractOkButton;
+import org.eclipse.scout.rt.client.ui.form.fields.groupbox.AbstractGroupBox;
+import org.eclipse.scout.rt.client.ui.form.fields.smartfield.AbstractSmartField;
+import org.eclipse.scout.rt.client.ui.form.fields.stringfield.AbstractStringField;
+import org.eclipse.scout.rt.shared.TEXTS;
+import org.eclipse.scout.rt.shared.services.lookup.ILookupCall;
+import org.eclipse.scout.service.SERVICES;
+
+/**
+ * @author AndrewL
+ */
+@FormData(value = AddressFormData.class, sdkCommand = FormData.SdkCommand.CREATE)
+public class AddressForm extends AbstractForm {
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public AddressForm() throws ProcessingException {
+    super();
+  }
+
+  @Override
+  protected String getConfiguredTitle() {
+    return TEXTS.get("Address");
+  }
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public void startModify() throws ProcessingException {
+    startInternal(new ModifyHandler());
+  }
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public void startNew() throws ProcessingException {
+    startInternal(new NewHandler());
+  }
+
+  /**
+   * @return the BillingBox
+   */
+  public BillingBox getBillingBox(){
+    return getFieldByClass(BillingBox.class);
+  }
+
+  /**
+   * @return the CancelButton
+   */
+  public CancelButton getCancelButton() {
+    return getFieldByClass(CancelButton.class);
+  }
+
+  /**
+   * @return the CompanyField
+   */
+  public CompanyField getCompanyField(){
+    return getFieldByClass(CompanyField.class);
+  }
+
+  /**
+   * @return the DivisionField
+   */
+  public DivisionField getDivisionField(){
+    return getFieldByClass(DivisionField.class);
+  }
+
+  /**
+   * @return the GeneralBox
+   */
+  public GeneralBox getGeneralBox(){
+    return getFieldByClass(GeneralBox.class);
+  }
+
+  /**
+   * @return the MainBox
+   */
+  public MainBox getMainBox() {
+    return getFieldByClass(MainBox.class);
+  }
+
+  /**
+   * @return the OkButton
+   */
+  public OkButton getOkButton() {
+    return getFieldByClass(OkButton.class);
+  }
+
+  /**
+   * @return the ShippingAddressField
+   */
+  public ShippingAddressField getShippingAddressField(){
+    return getFieldByClass(ShippingAddressField.class);
+  }
+
+  /**
+   * @return the ShippingBox
+   */
+  public ShippingBox getShippingBox(){
+    return getFieldByClass(ShippingBox.class);
+  }
+
+  /**
+   * @return the ShippingCommentsField
+   */
+  public ShippingCommentsField getShippingCommentsField(){
+    return getFieldByClass(ShippingCommentsField.class);
+  }
+
+  /**
+   * @return the ShippingStateField
+   */
+  public ShippingStateField getShippingStateField(){
+    return getFieldByClass(ShippingStateField.class);
+  }
+
+  /**
+   * @return the ShippingZipCodeField
+   */
+  public ShippingZipCodeField getShippingZipCodeField(){
+    return getFieldByClass(ShippingZipCodeField.class);
+  }
+
+  @Order(10.0)
+  public class MainBox extends AbstractGroupBox {
+
+    @Order(10.0)
+    public class GeneralBox extends AbstractGroupBox {
+
+      @Override
+      protected int getConfiguredGridColumnCount() {
+        return 2;
+      }
+
+      @Override
+      protected String getConfiguredLabel() {
+        return TEXTS.get("General");
+      }
+
+      @Order(10.0)
+      public class CompanyField extends AbstractSmartField<Long> {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("Company");
+        }
+
+        @Override
+        protected int getConfiguredLabelPosition() {
+          return LABEL_POSITION_TOP;
+        }
+
+        @Override
+        protected Class<? extends ILookupCall<Long>> getConfiguredLookupCall() {
+          return CompanyLookupCall.class;
+        }
+      }
+
+      @Order(20.0)
+      public class DivisionField extends AbstractSmartField<Long> {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("Division");
+        }
+
+        @Override
+        protected int getConfiguredLabelPosition() {
+          return LABEL_POSITION_TOP;
+        }
+
+        @Override
+        protected Class<? extends ILookupCall<Long>> getConfiguredLookupCall() {
+          return DivisionFromCompanyLookupCall.class;
+        }
+
+        @Override
+        protected Class<? extends IValueField> getConfiguredMasterField() {
+          return AddressForm.MainBox.GeneralBox.CompanyField.class;
+        }
+
+        @Override
+        protected boolean getConfiguredMasterRequired() {
+          return true;
+        }
+      }
+
+      @Order(30.0)
+      public class ShippingBox extends AbstractGroupBox {
+
+        @Override
+        protected boolean getConfiguredBorderVisible() {
+          return false;
+        }
+
+        @Override
+        protected int getConfiguredGridColumnCount() {
+          return 1;
+        }
+
+        @Override
+        protected int getConfiguredGridW() {
+          return 2;
+        }
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("Shipping");
+        }
+
+        @Override
+        protected boolean getConfiguredLabelVisible() {
+          return false;
+        }
+
+        @Order(10.0)
+        public class ShippingAddressField extends AbstractStringField {
+
+          @Override
+          protected String getConfiguredLabel() {
+            return TEXTS.get("ShippingAddress");
+          }
+
+          @Override
+          protected int getConfiguredLabelPosition() {
+            return LABEL_POSITION_TOP;
+          }
+        }
+
+        @Order(20.0)
+        public class ShippingStateField extends AbstractStringField {
+
+          @Override
+          protected String getConfiguredLabel() {
+            return TEXTS.get("ShippingState");
+          }
+
+          @Override
+          protected int getConfiguredLabelPosition() {
+            return LABEL_POSITION_TOP;
+          }
+        }
+
+        @Order(30.0)
+        public class ShippingZipCodeField extends AbstractStringField {
+
+          @Override
+          protected String getConfiguredLabel() {
+            return TEXTS.get("ShippingZipCode");
+          }
+
+          @Override
+          protected int getConfiguredLabelPosition() {
+            return LABEL_POSITION_TOP;
+          }
+        }
+
+        @Order(40.0)
+        public class ShippingCommentsField extends AbstractStringField {
+
+          @Override
+          protected String getConfiguredLabel() {
+            return TEXTS.get("ShippingComments");
+          }
+
+          @Override
+          protected int getConfiguredLabelPosition() {
+            return LABEL_POSITION_TOP;
+          }
+
+          @Override
+          protected boolean getConfiguredWrapText() {
+            return true;
+          }
+        }
+      }
+
+      @Order(40.0)
+      public class BillingBox extends AbstractGroupBox {
+
+        @Override
+        protected boolean getConfiguredBorderVisible() {
+          return false;
+        }
+
+        @Override
+        protected int getConfiguredGridColumnCount() {
+          return 1;
+        }
+
+        @Override
+        protected int getConfiguredGridW() {
+          return 2;
+        }
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("Billing");
+        }
+
+        @Override
+        protected boolean getConfiguredLabelVisible() {
+          return false;
+        }
+      }
+    }
+
+    @Order(20.0)
+    public class OkButton extends AbstractOkButton {
+    }
+
+    @Order(30.0)
+    public class CancelButton extends AbstractCancelButton {
+    }
+  }
+
+  public class ModifyHandler extends AbstractFormHandler {
+
+    @Override
+    protected void execLoad() throws ProcessingException {
+      IAddressService service = SERVICES.getService(IAddressService.class);
+      AddressFormData formData = new AddressFormData();
+      exportFormData(formData);
+      formData = service.load(formData);
+      importFormData(formData);
+      setEnabledPermission(new UpdateAddressPermission());
+
+    }
+
+    @Override
+    protected void execStore() throws ProcessingException {
+      IAddressService service = SERVICES.getService(IAddressService.class);
+      AddressFormData formData = new AddressFormData();
+      exportFormData(formData);
+      formData = service.store(formData);
+
+    }
+  }
+
+  public class NewHandler extends AbstractFormHandler {
+
+    @Override
+    protected void execLoad() throws ProcessingException {
+      IAddressService service = SERVICES.getService(IAddressService.class);
+      AddressFormData formData = new AddressFormData();
+      exportFormData(formData);
+      formData = service.prepareCreate(formData);
+      importFormData(formData);
+
+    }
+
+    @Override
+    protected void execStore() throws ProcessingException {
+      IAddressService service = SERVICES.getService(IAddressService.class);
+      AddressFormData formData = new AddressFormData();
+      exportFormData(formData);
+      formData = service.create(formData);
+
+    }
+  }
+}

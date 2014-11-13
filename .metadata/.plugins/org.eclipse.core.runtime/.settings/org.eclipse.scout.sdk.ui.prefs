@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+org.eclipse.scout.sdk.ui.view.scoutExplorer.bundleDisplayStyle=grouped
+pref_scout_project_prod_launcher_org.asd.kyros.shared=/org.asd.kyros.server/products/development/Kyros-server-dev.product,/org.asd.kyros.ui.rap/products/development/Kyros-rap-dev.product,/org.asd.kyros.ui.swing/products/development/Kyros-swing-client-dev.product,/org.asd.kyros.ui.swt/products/development/Kyros-swt-client-dev.product

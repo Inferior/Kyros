@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<repository name='Bundle pool' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1'>
+  <properties size='2'>
+    <property name='p2.system' value='true'/>
+    <property name='p2.timestamp' value='1415805837439'/>
+  </properties>
+  <mappings size='3'>
+    <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
+    <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
+  </mappings>
+  <artifacts size='11'>
+    <artifact classifier='org.eclipse.update.feature' id='com.bsiag.scout.rt.ui.swing.laf.rayo.source' version='4.0.100.20140903-1234'>
+      <properties size='1'>
+        <property name='download.size' value='15638'/>
+      </properties>
+      <repositoryProperties size='1'>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.bsiag.scout.rt.ui.swing.rayo.source' version='4.0.100.20140829-1420'>
+      <properties size='1'>
+        <property name='download.size' value='50182'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.bsiag.scout.rt.ui.swing.laf.rayo.fragment' version='4.0.100.20140829-1420'>
+      <properties size='1'>
+        <property name='download.size' value='790355'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='com.bsiag.scout.rt.server.jdbc.mysql5117' version='5.1.17.20140903-1233'>
+      <properties size='1'>
+        <property name='download.size' value='15514'/>
+      </properties>
+      <repositoryProperties size='1'>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.bsiag.scout.rt.server.jdbc.mysql5117' version='5.1.17.20140212-1403'>
+      <properties size='1'>
+        <property name='download.size' value='4191'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.bsiag.scout.rt.ui.swing.laf.rayo.fragment.source' version='4.0.100.20140829-1420'>
+      <properties size='1'>
+        <property name='download.size' value='532950'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.mysql.jdbc_5117.fragment' version='5.1.17.20130717'>
+      <properties size='1'>
+        <property name='download.size' value='758517'/>
+      </properties>
+      <repositoryProperties size='1'>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='com.bsiag.scout.rt.server.jdbc.mysql5117.source' version='5.1.17.20140903-1233'>
+      <properties size='1'>
+        <property name='download.size' value='14959'/>
+      </properties>
+      <repositoryProperties size='1'>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.bsiag.scout.rt.ui.swing.rayo' version='4.0.100.20140829-1420'>
+      <properties size='1'>
+        <property name='download.size' value='90598'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='com.bsiag.scout.rt.server.jdbc.mysql5117.source' version='5.1.17.20140212-1403'>
+      <properties size='1'>
+        <property name='download.size' value='3780'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='com.bsiag.scout.rt.ui.swing.laf.rayo' version='4.0.100.20140903-1234'>
+      <properties size='1'>
+        <property name='download.size' value='16824'/>
+      </properties>
+      <repositoryProperties size='1'>
+        <property name='artifact.folder' value='true'/>
+      </repositoryProperties>
+    </artifact>
+  </artifacts>
+</repository>

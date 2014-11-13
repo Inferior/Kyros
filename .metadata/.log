@@ -1,0 +1,380 @@
+!SESSION 2014-11-12 09:18:57.645 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.scout.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.scout.product
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 09:19:29.408
+!MESSAGE org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	Starting SCOUT SDK Plugin.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-11-12 09:20:43.638
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 09:24:25.814
+!MESSAGE org.eclipse.scout.sdk.workspace.type.ScoutTypeUtility.createStructuredType(ScoutTypeUtility.java:1204)
+	no structured type defined for type 'org.asd.kyros.server.services.common.sql.DevelopmentSqlService'.
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 09:24:27.764
+!MESSAGE org.eclipse.scout.sdk.workspace.type.ScoutTypeUtility.createStructuredType(ScoutTypeUtility.java:1204)
+	no structured type defined for type 'org.asd.kyros.server.services.common.sql.DevelopmentSqlService'.
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 09:24:43.332
+!MESSAGE org.eclipse.scout.sdk.workspace.type.ScoutTypeUtility.createStructuredType(ScoutTypeUtility.java:1204)
+	no structured type defined for type 'org.asd.kyros.server.services.common.sql.DevelopmentSqlService'.
+
+!ENTRY org.eclipse.jface 2 0 2014-11-12 09:28:05.107
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-11-12 09:28:05.107
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2c44dccf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(io.emmet.eclipse.commands.match_pair_outward,Match Pair Outward,
+		,
+		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@12a02096,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.debug.ui 4 120 2014-11-12 09:28:40.985
+!MESSAGE org.eclipse.debug.ui.toggleBreakpointsTargetFactory extension failed to load breakpoint toggle target because the specified id is already registered.  Specified ID is: org.chromium.debug.ui.ChromiumToggleBreakpointTargetFactory
+
+!ENTRY org.eclipse.ui 4 0 2014-11-12 09:31:42.636
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTException: Widget is disposed)
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:139)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4147)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3764)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+Caused by: org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:476)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:348)
+	at org.eclipse.swt.widgets.Control.setRedraw(Control.java:3547)
+	at org.eclipse.scout.sdk.ui.view.properties.presenter.single.AbstractMethodPresenter.setMethod(AbstractMethodPresenter.java:204)
+	at org.eclipse.scout.sdk.ui.view.properties.part.singlepage.JdtTypePropertyPart$P_UpdateMethodsJob$1.run(JdtTypePropertyPart.java:648)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:167)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:165)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:136)
+	... 24 more
+!SESSION 2014-11-12 10:13:28.017 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.scout.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.scout.product
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 10:13:41.497
+!MESSAGE org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	Starting SCOUT SDK Plugin.
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-11-12 10:20:41.418
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.scout.sdk.ui 2 0 2014-11-12 10:21:24.848
+!MESSAGE org.eclipse.scout.sdk.ui.fields.tooltip.JavadocTooltip.getInfoText(JavadocTooltip.java:313)
+	could not load image for 'getConfiguredSqlSelect'.
+
+!ENTRY org.eclipse.jface 2 0 2014-11-12 10:21:24.895
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-11-12 10:21:24.895
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4891aee2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(io.emmet.eclipse.commands.match_pair_outward,Match Pair Outward,
+		,
+		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@537caf04,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.debug.ui 4 120 2014-11-12 10:24:27.197
+!MESSAGE org.eclipse.debug.ui.toggleBreakpointsTargetFactory extension failed to load breakpoint toggle target because the specified id is already registered.  Specified ID is: org.chromium.debug.ui.ChromiumToggleBreakpointTargetFactory
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 10:42:05.137
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.BooleanCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 10:42:05.137
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.DoubleCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 10:42:05.137
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.FloatCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 10:42:05.137
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.IntegerCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 10:42:05.137
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.LongCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 10:42:05.137
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.StringCodeIdParser
+!SESSION 2014-11-12 11:58:23.405 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.scout.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.scout.product
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 11:58:37.570
+!MESSAGE org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	Starting SCOUT SDK Plugin.
+
+!ENTRY org.eclipse.jface 2 0 2014-11-12 12:00:05.866
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-11-12 12:00:05.866
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7781b55f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(io.emmet.eclipse.commands.match_pair_outward,Match Pair Outward,
+		,
+		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2cb3bc0e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.debug.ui 4 120 2014-11-12 13:56:45.457
+!MESSAGE org.eclipse.debug.ui.toggleBreakpointsTargetFactory extension failed to load breakpoint toggle target because the specified id is already registered.  Specified ID is: org.chromium.debug.ui.ChromiumToggleBreakpointTargetFactory
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-11-12 13:57:52.958
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.ui 4 10001 2014-11-12 14:43:03.084
+!MESSAGE Internal Error
+!STACK 1
+Java Model Exception: Java Model Status [Unknown javadoc format for Override {key=Ljava/lang/Override;} [in Override.class [in java.lang [in C:\Program Files\Java\jre8\lib\rt.jar]]]]
+	at org.eclipse.jdt.internal.core.JavadocContents.getTypeDoc(JavadocContents.java:81)
+	at org.eclipse.jdt.internal.core.BinaryType.getAttachedJavadoc(BinaryType.java:999)
+	at org.eclipse.jdt.internal.ui.text.javadoc.JavadocContentAccess2.getHTMLContent(JavadocContentAccess2.java:500)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo(JavadocHover.java:689)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.internalGetHoverInfo(JavadocHover.java:607)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavadocHover.getHoverInfo2(JavadocHover.java:599)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:129)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:85)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SUBENTRY 1 org.eclipse.jdt.core 4 1009 2014-11-12 14:43:03.084
+!MESSAGE Unknown javadoc format for Override {key=Ljava/lang/Override;} [in Override.class [in java.lang [in C:\Program Files\Java\jre8\lib\rt.jar]]]
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 15:07:27.374
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.BooleanCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 15:07:27.374
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.DoubleCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 15:07:27.374
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.FloatCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 15:07:27.374
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.IntegerCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 15:07:27.374
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.LongCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-12 15:07:27.374
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.StringCodeIdParser
+!SESSION 2014-11-13 07:36:38.637 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.scout.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.scout.product
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-13 07:37:03.982
+!MESSAGE org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	Starting SCOUT SDK Plugin.
+
+!ENTRY org.eclipse.jface 2 0 2014-11-13 07:37:11.795
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2014-11-13 07:37:11.795
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@58fa8762,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(io.emmet.eclipse.commands.match_pair_outward,Match Pair Outward,
+		,
+		Category(io.emmet.eclipse.commands.category,Emmet,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@8cd00bc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2014-11-13 07:45:50.439
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-13 07:45:51.889
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.BooleanCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-13 07:45:51.889
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.DoubleCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-13 07:45:51.889
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.FloatCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-13 07:45:51.889
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.IntegerCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-13 07:45:51.889
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.LongCodeIdParser
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-13 07:45:51.889
+!MESSAGE org.eclipse.scout.sdk.extensions.codeid.CodeIdExtensionPoint.getCodeIdParsers(CodeIdExtensionPoint.java:106)
+	found code id parser: org.eclipse.scout.sdk.extensions.codeid.parsers.StringCodeIdParser
+
+!ENTRY org.eclipse.debug.ui 4 120 2014-11-13 07:47:25.528
+!MESSAGE org.eclipse.debug.ui.toggleBreakpointsTargetFactory extension failed to load breakpoint toggle target because the specified id is already registered.  Specified ID is: org.chromium.debug.ui.ChromiumToggleBreakpointTargetFactory
+
+!ENTRY org.eclipse.ui 4 0 2014-11-13 08:29:40.647
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (org.eclipse.swt.SWTException: Widget is disposed)
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:139)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4147)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3764)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+Caused by: org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4441)
+	at org.eclipse.swt.SWT.error(SWT.java:4356)
+	at org.eclipse.swt.SWT.error(SWT.java:4327)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:476)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:348)
+	at org.eclipse.swt.widgets.Control.setRedraw(Control.java:3547)
+	at org.eclipse.scout.sdk.ui.view.properties.presenter.single.AbstractMethodPresenter.setMethod(AbstractMethodPresenter.java:204)
+	at org.eclipse.scout.sdk.ui.view.properties.part.singlepage.JdtTypePropertyPart$P_UpdateMethodsJob$1.run(JdtTypePropertyPart.java:648)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:167)
+	at org.eclipse.ui.internal.UISynchronizer$3.run(UISynchronizer.java:165)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:136)
+	... 24 more
+!SESSION 2014-11-13 10:11:24.496 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.scout.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.scout.product
+
+!ENTRY org.eclipse.scout.sdk 1 0 2014-11-13 10:11:31.973
+!MESSAGE org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:771)
+	Starting SCOUT SDK Plugin.

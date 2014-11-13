@@ -1,0 +1,299 @@
+/**
+ * 
+ */
+package org.asd.kyros.client.alpha;
+
+import org.asd.kyros.client.alpha.SpecificationForm.MainBox.CancelButton;
+import org.asd.kyros.client.alpha.SpecificationForm.MainBox.GeneralBox;
+import org.asd.kyros.client.alpha.SpecificationForm.MainBox.GeneralBox.IssueDateField;
+import org.asd.kyros.client.alpha.SpecificationForm.MainBox.GeneralBox.IssuingCompanyField;
+import org.asd.kyros.client.alpha.SpecificationForm.MainBox.GeneralBox.NumberField;
+import org.asd.kyros.client.alpha.SpecificationForm.MainBox.GeneralBox.RevisionField;
+import org.asd.kyros.client.alpha.SpecificationForm.MainBox.GeneralBox.StatusField;
+import org.asd.kyros.client.alpha.SpecificationForm.MainBox.OkButton;
+import org.asd.kyros.shared.alpha.ISpecificationService;
+import org.asd.kyros.shared.alpha.SpecificationFormData;
+import org.asd.kyros.shared.alpha.UpdateSpecificationPermission;
+import org.asd.kyros.shared.delta.IssuingCompanyLookupCall;
+import org.eclipse.scout.commons.annotations.FormData;
+import org.eclipse.scout.commons.annotations.Order;
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.rt.client.ui.form.AbstractForm;
+import org.eclipse.scout.rt.client.ui.form.AbstractFormHandler;
+import org.eclipse.scout.rt.client.ui.form.fields.button.AbstractCancelButton;
+import org.eclipse.scout.rt.client.ui.form.fields.button.AbstractOkButton;
+import org.eclipse.scout.rt.client.ui.form.fields.datefield.AbstractDateField;
+import org.eclipse.scout.rt.client.ui.form.fields.groupbox.AbstractGroupBox;
+import org.eclipse.scout.rt.client.ui.form.fields.groupbox.IGroupBoxBodyGrid;
+import org.eclipse.scout.rt.client.ui.form.fields.groupbox.internal.HorizontalGroupBoxBodyGrid;
+import org.eclipse.scout.rt.client.ui.form.fields.smartfield.AbstractSmartField;
+import org.eclipse.scout.rt.client.ui.form.fields.stringfield.AbstractStringField;
+import org.eclipse.scout.rt.shared.TEXTS;
+import org.eclipse.scout.rt.shared.services.lookup.ILookupCall;
+import org.eclipse.scout.service.SERVICES;
+
+/**
+ * @author AndrewL
+ */
+@FormData(value = SpecificationFormData.class, sdkCommand = FormData.SdkCommand.CREATE)
+public class SpecificationForm extends AbstractForm {
+
+  private String m_icNr;
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public SpecificationForm() throws ProcessingException {
+    super();
+  }
+
+  @Override
+  protected String getConfiguredTitle() {
+    return TEXTS.get("Specification");
+  }
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public void startModify() throws ProcessingException {
+    startInternal(new ModifyHandler());
+  }
+
+  /**
+   * @throws org.eclipse.scout.commons.exception.ProcessingException
+   */
+  public void startNew() throws ProcessingException {
+    startInternal(new NewHandler());
+  }
+
+  /**
+   * @return the CancelButton
+   */
+  public CancelButton getCancelButton() {
+    return getFieldByClass(CancelButton.class);
+  }
+
+  /**
+   * @return the GeneralBox
+   */
+  public GeneralBox getGeneralBox(){
+    return getFieldByClass(GeneralBox.class);
+  }
+
+  /**
+   * @return the IssueDateField
+   */
+  public IssueDateField getIssueDateField(){
+    return getFieldByClass(IssueDateField.class);
+  }
+
+  /**
+   * @return the IssuingCompanyField
+   */
+  public IssuingCompanyField getIssuingCompanyField(){
+    return getFieldByClass(IssuingCompanyField.class);
+  }
+
+  /**
+   * @return the MainBox
+   */
+  public MainBox getMainBox() {
+    return getFieldByClass(MainBox.class);
+  }
+
+  /**
+   * @return the NumberField
+   */
+  public NumberField getNumberField(){
+    return getFieldByClass(NumberField.class);
+  }
+
+  /**
+   * @return the OkButton
+   */
+  public OkButton getOkButton() {
+    return getFieldByClass(OkButton.class);
+  }
+
+  /**
+   * @return the RevisionField
+   */
+  public RevisionField getRevisionField(){
+    return getFieldByClass(RevisionField.class);
+  }
+
+  /**
+   * @return the StatusField
+   */
+  public StatusField getStatusField(){
+    return getFieldByClass(StatusField.class);
+  }
+
+  @Order(10.0)
+  public class MainBox extends AbstractGroupBox {
+
+    @Order(10.0)
+    public class GeneralBox extends AbstractGroupBox {
+
+      @Override
+      protected Class<? extends IGroupBoxBodyGrid> getConfiguredBodyGrid() {
+        return HorizontalGroupBoxBodyGrid.class;
+      }
+
+      @Override
+      protected int getConfiguredGridColumnCount() {
+        return 4;
+      }
+
+      @Override
+      protected String getConfiguredLabel() {
+        return TEXTS.get("General");
+      }
+
+      @Override
+      protected boolean getConfiguredLabelVisible() {
+        return false;
+      }
+
+      @Order(10.0)
+      public class IssuingCompanyField extends AbstractSmartField<Long> {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("IssuingCompany");
+        }
+
+        @Override
+        protected int getConfiguredLabelPosition() {
+          return LABEL_POSITION_TOP;
+        }
+
+        @Override
+        protected Class<? extends ILookupCall<Long>> getConfiguredLookupCall() {
+          return IssuingCompanyLookupCall.class;
+        }
+      }
+
+      @Order(20.0)
+      public class NumberField extends AbstractStringField {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("Number");
+        }
+
+        @Override
+        protected int getConfiguredLabelPosition() {
+          return LABEL_POSITION_TOP;
+        }
+      }
+
+      @Order(30.0)
+      public class RevisionField extends AbstractStringField {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("Revision");
+        }
+
+        @Override
+        protected int getConfiguredLabelPosition() {
+          return LABEL_POSITION_TOP;
+        }
+      }
+
+      @Order(40.0)
+      public class StatusField extends AbstractSmartField<Integer> {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("Status");
+        }
+
+        @Override
+        protected int getConfiguredLabelPosition() {
+          return LABEL_POSITION_TOP;
+        }
+      }
+
+      @Order(50.0)
+      public class IssueDateField extends AbstractDateField {
+
+        @Override
+        protected String getConfiguredLabel() {
+          return TEXTS.get("IssueDate");
+        }
+      }
+    }
+
+    @Order(20.0)
+    public class OkButton extends AbstractOkButton {
+    }
+
+    @Order(30.0)
+    public class CancelButton extends AbstractCancelButton {
+    }
+  }
+
+  public class ModifyHandler extends AbstractFormHandler {
+
+    @Override
+    protected void execLoad() throws ProcessingException {
+      ISpecificationService service = SERVICES.getService(ISpecificationService.class);
+      SpecificationFormData formData = new SpecificationFormData();
+      exportFormData(formData);
+      formData = service.load(formData);
+      importFormData(formData);
+      setEnabledPermission(new UpdateSpecificationPermission());
+
+    }
+
+    @Override
+    protected void execStore() throws ProcessingException {
+      ISpecificationService service = SERVICES.getService(ISpecificationService.class);
+      SpecificationFormData formData = new SpecificationFormData();
+      exportFormData(formData);
+      formData = service.store(formData);
+
+    }
+  }
+
+  public class NewHandler extends AbstractFormHandler {
+
+    @Override
+    protected void execLoad() throws ProcessingException {
+      ISpecificationService service = SERVICES.getService(ISpecificationService.class);
+      SpecificationFormData formData = new SpecificationFormData();
+      exportFormData(formData);
+      formData = service.prepareCreate(formData);
+      importFormData(formData);
+
+    }
+
+    @Override
+    protected void execStore() throws ProcessingException {
+      ISpecificationService service = SERVICES.getService(ISpecificationService.class);
+      SpecificationFormData formData = new SpecificationFormData();
+      exportFormData(formData);
+      formData = service.create(formData);
+
+    }
+  }
+
+  /**
+   * @return the IcNr
+   */
+  @FormData
+  public String getIcNr() {
+    return m_icNr;
+  }
+
+  /**
+   * @param icNr
+   *          the IcNr to set
+   */
+  @FormData
+  public void setIcNr(String icNr) {
+    m_icNr = icNr;
+  }
+}

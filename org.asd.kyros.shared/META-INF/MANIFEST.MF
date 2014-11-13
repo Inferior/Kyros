@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.asd.kyros.shared
+Bundle-SymbolicName: org.asd.kyros.shared;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.asd.kyros.shared.Activator
+Export-Package: org.asd.kyros.shared,
+ org.asd.kyros.shared.alpha,
+ org.asd.kyros.shared.delta,
+ org.asd.kyros.shared.services,
+ org.asd.kyros.shared.services.common.text
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.scout.rt.shared;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

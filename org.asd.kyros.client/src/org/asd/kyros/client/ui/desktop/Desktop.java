@@ -1,0 +1,415 @@
+package org.asd.kyros.client.ui.desktop;
+
+import java.util.Set;
+
+import org.asd.kyros.client.ClientSession;
+import org.asd.kyros.client.alpha.AddressForm;
+import org.asd.kyros.client.alpha.AnnouncementForm;
+import org.asd.kyros.client.alpha.CompanyForm;
+import org.asd.kyros.client.alpha.ContactForm;
+import org.asd.kyros.client.alpha.DivisionForm;
+import org.asd.kyros.client.alpha.EmployeeForm;
+import org.asd.kyros.client.alpha.IDCDepartmentForm;
+import org.asd.kyros.client.alpha.IssuingCompanyForm;
+import org.asd.kyros.client.alpha.MaterialTypeForm;
+import org.asd.kyros.client.alpha.PartForm;
+import org.asd.kyros.client.alpha.ProcessForm;
+import org.asd.kyros.client.alpha.SpecificationForm;
+import org.asd.kyros.client.delta.FinishTypeForm;
+import org.asd.kyros.client.delta.MaterialGradeForm;
+import org.asd.kyros.client.ui.forms.DesktopForm;
+import org.asd.kyros.shared.Icons;
+import org.eclipse.scout.commons.CollectionUtility;
+import org.eclipse.scout.commons.annotations.Order;
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.commons.logger.IScoutLogger;
+import org.eclipse.scout.commons.logger.ScoutLogManager;
+import org.eclipse.scout.rt.client.ClientSyncJob;
+import org.eclipse.scout.rt.client.ui.action.keystroke.AbstractKeyStroke;
+import org.eclipse.scout.rt.client.ui.action.menu.AbstractMenu;
+import org.eclipse.scout.rt.client.ui.action.menu.IMenuType;
+import org.eclipse.scout.rt.client.ui.desktop.IDesktop;
+import org.eclipse.scout.rt.client.ui.desktop.outline.pages.IPage;
+import org.eclipse.scout.rt.client.ui.form.ScoutInfoForm;
+import org.eclipse.scout.rt.extension.client.ui.action.menu.AbstractExtensibleMenu;
+import org.eclipse.scout.rt.extension.client.ui.desktop.AbstractExtensibleDesktop;
+import org.eclipse.scout.rt.shared.TEXTS;
+import org.eclipse.scout.rt.shared.ui.UserAgentUtility;
+
+public class Desktop extends AbstractExtensibleDesktop implements IDesktop {
+  private static IScoutLogger logger = ScoutLogManager.getLogger(Desktop.class);
+
+  public Desktop() {
+  }
+
+  @Override
+  protected String getConfiguredTitle() {
+    return TEXTS.get("ApplicationTitle");
+  }
+
+  @Override
+  protected void execOpened() throws ProcessingException {
+    //If it is a mobile or tablet device, the DesktopExtension in the mobile plugin takes care of starting the correct forms.
+    if (!UserAgentUtility.isDesktopDevice()) {
+      return;
+    }
+    DesktopForm desktopForm = new DesktopForm();
+    desktopForm.setIconId(Icons.EclipseScout);
+    desktopForm.startView();
+  }
+
+  @Order(10.0)
+  public class FileMenu extends AbstractMenu {
+
+    @Override
+    protected String getConfiguredText() {
+      return TEXTS.get("FileMenu");
+    }
+
+    @Order(100.0)
+    public class ExitMenu extends AbstractMenu {
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("ExitMenu");
+      }
+
+      @Override
+      public void execAction() throws ProcessingException {
+        ClientSyncJob.getCurrentSession(ClientSession.class).stopSession();
+      }
+    }
+  }
+
+  @Order(20.0)
+  public class ToolsMenu extends AbstractMenu {
+
+    @Override
+    protected String getConfiguredText() {
+      return TEXTS.get("ToolsMenu");
+    }
+
+    @Order(10.0)
+    public class NewAnnouncementMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewAnnouncement");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        AnnouncementForm form = new AnnouncementForm();
+        form.startNew();
+      }
+    }
+
+    @Order(20.0)
+    public class NewDepartmentMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewDepartment");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        IDCDepartmentForm form = new IDCDepartmentForm();
+        form.startNew();
+      }
+    }
+
+    @Order(30.0)
+    public class NewEmployeeMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewEmployee");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        EmployeeForm form = new EmployeeForm();
+        form.startNew();
+      }
+    }
+
+    @Order(40.0)
+    public class NewIssuingCompanyMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewIssuingCompany");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        IssuingCompanyForm form = new IssuingCompanyForm();
+        form.startNew();
+      }
+    }
+
+    @Order(50.0)
+    public class NewSpecificationMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewSpecification");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        SpecificationForm form = new SpecificationForm();
+        form.startNew();
+      }
+    }
+
+    @Order(60.0)
+    public class NewMaterialTypeMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewMaterialType");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        MaterialTypeForm form = new MaterialTypeForm();
+        form.startNew();
+      }
+    }
+
+    @Order(70.0)
+    public class NewMaterialGradeMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewMaterialGrade");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        MaterialGradeForm form = new MaterialGradeForm();
+        form.startNew();
+      }
+    }
+
+    @Order(80.0)
+    public class NewFinishTypeMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewFinishType");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        FinishTypeForm form = new FinishTypeForm();
+        form.startNew();
+      }
+    }
+
+    @Order(90.0)
+    public class NewProcessMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewProcess");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        ProcessForm form = new ProcessForm();
+        form.startNew();
+      }
+    }
+
+    @Order(100.0)
+    public class NewCompanyMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewCompany");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        CompanyForm form = new CompanyForm();
+        form.startNew();
+      }
+    }
+
+    @Order(110.0)
+    public class NewContactMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewContact");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        ContactForm form = new ContactForm();
+        form.startNew();
+      }
+    }
+
+    @Order(120.0)
+    public class NewDivisionMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewDivision");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        DivisionForm form = new DivisionForm();
+        form.startNew();
+      }
+    }
+
+    @Order(130.0)
+    public class NewAddressMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewAddress");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        AddressForm form = new AddressForm();
+        form.startNew();
+      }
+    }
+
+    @Order(140.0)
+    public class NewPartMenu extends AbstractExtensibleMenu {
+
+      @Override
+      protected Set<? extends IMenuType> getConfiguredMenuTypes() {
+        return CollectionUtility.<IMenuType> hashSet();
+      }
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("NewPart");
+      }
+
+      @Override
+      protected void execAction() throws ProcessingException {
+        PartForm form = new PartForm();
+        form.startNew();
+      }
+    }
+  }
+
+  @Order(30.0)
+  public class HelpMenu extends AbstractMenu {
+
+    @Override
+    protected String getConfiguredText() {
+      return TEXTS.get("HelpMenu");
+    }
+
+    @Order(10.0)
+    public class AboutMenu extends AbstractMenu {
+
+      @Override
+      protected String getConfiguredText() {
+        return TEXTS.get("AboutMenu");
+      }
+
+      @Override
+      public void execAction() throws ProcessingException {
+        ScoutInfoForm form = new ScoutInfoForm();
+        form.startModify();
+      }
+    }
+  }
+
+  @Order(10.0)
+  public class RefreshOutlineKeyStroke extends AbstractKeyStroke {
+
+    @Override
+    protected String getConfiguredKeyStroke() {
+      return "f5";
+    }
+
+    @Override
+    protected void execAction() throws ProcessingException {
+      if (getOutline() != null) {
+        IPage page = getOutline().getActivePage();
+        if (page != null) {
+          page.reloadPage();
+        }
+      }
+    }
+  }
+}

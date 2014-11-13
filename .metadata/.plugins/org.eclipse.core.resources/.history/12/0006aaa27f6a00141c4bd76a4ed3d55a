@@ -1,0 +1,6 @@
+package org.asd.kyros.shared.services;
+
+import org.eclipse.scout.rt.shared.data.form.AbstractFormData;
+
+public class DesktopFormData extends AbstractFormData{
+}

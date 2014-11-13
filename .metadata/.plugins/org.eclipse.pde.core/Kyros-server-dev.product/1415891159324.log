@@ -1,0 +1,270 @@
+!SESSION 2014-11-13 09:05:59.090 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.asd.kyros.server.product
+Command-line arguments:  -product org.asd.kyros.server.product -data C:\app\Git\Kyros/../runtime-Kyros-server-dev.product -dev file:C:/app/Git/Kyros/.metadata/.plugins/org.eclipse.pde.core/Kyros-server-dev.product/dev.properties -os win32 -ws win32 -arch x86_64 -consoleLog
+
+!ENTRY org.asd.kyros.server 1 0 2014-11-13 09:06:00.791
+!MESSAGE org.asd.kyros.server.ServerApplication.start(ServerApplication.java:35) Kyros server initialized
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.587
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:71) Config Bean Properties
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.587
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:73)  org.eclipse.scout.rt.server.services.common.file.RemoteFileService#rootPath=C:/app/Git/Kyros/org.asd.kyros.server/j2ee/ear/war/WEB-INF/remotefiles
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.587
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:73)  org.eclipse.scout.rt.server.commons.servletfilter.security.BasicSecurityFilter#realm=Kyros Development
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.587
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:73)  org.eclipse.scout.rt.server.commons.servletfilter.security.BasicSecurityFilter#users=admin=manager,allen=allen,blake=blake
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.587
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:73)  org.eclipse.scout.rt.server.commons.servletfilter.security.AnonymousSecurityFilter#active=true
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.587
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.<clinit>(ConfigIniUtility.java:73)  org.eclipse.scout.rt.server.commons.servletfilter.security.BasicSecurityFilter#active=false
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.commons.servletfilter.security.BasicSecurityFilter
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:96)  active=false
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:96)  realm=Kyros Development
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:96)  users=admin=manager,allen=allen,blake=blake
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.commons.servletfilter.security.BasicSecurityFilter
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:96)  active=false
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:96)  realm=Kyros Development
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:96)  users=admin=manager,allen=allen,blake=blake
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.commons.servletfilter.security.AnonymousSecurityFilter
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:96)  active=true
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.commons.servletfilter.security.BasicSecurityFilter
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:96)  active=false
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:96)  realm=Kyros Development
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:96)  users=admin=manager,allen=allen,blake=blake
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.commons.servletfilter.security.AnonymousSecurityFilter
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.588
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:96)  active=true
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.713
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.commons.cache.StickySessionCacheService
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.744
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.services.common.session.ServerSessionRegistryService
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.744
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.asd.kyros.server.services.common.security.AccessControlService
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:11.759
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.services.common.clientnotification.ClientNotificationService
+
+!ENTRY org.asd.kyros.server 1 0 2014-11-13 09:06:11.759
+!MESSAGE org.asd.kyros.server.ServerSession.execLoadSession(ServerSession.java:26) created a new session for anonymous
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:12.337
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.asd.kyros.server.services.DesktopService
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:21.494
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.asd.kyros.server.alpha.CompanyService
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:44.772
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.asd.kyros.server.services.common.sql.DevelopmentSqlService
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:06:44.773
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.services.common.security.PermissionService
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:06:45.646
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.<clinit>(StatementProcessor.java:77) SQL Log 'INFO': statements are logged with bind details, but not as plaintext. Use level 'FINE' to also log SQL as plain text (suitable for direct use in executable form)
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:06:45.896
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.pool.SqlConnectionPool.leaseConnection(SqlConnectionPool.java:104) created jdbc connection com.mysql.jdbc.JDBC4Connection@77b52050
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:06:45.897
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+INSERT INTO COMPANY(COMPANY_NAMELONG, COMPANY_NAMESHORT, COMPANY_WEBSITE, COMPANY_TYPE, APPROVAL_STATUS, APPROVAL_TYPE, APPROVAL_LEVEL, APPROVAL_SCOPE, APPROVAL_LOCKHEED, APPROVAL_FMT)
+VALUES    (:name, :abbreviation, :website, :type, :approvalStatus, :approvalType, :approvalLevel, :scopeOfApproval, :lockheedMartinApproved, :honeywellFMTApproved)
+IN  :name => ? [VARCHAR Lockheed Martin Corporation]
+IN  :abbreviation => ? [VARCHAR LMCO]
+IN  :website => ? [VARCHAR www.LockheedMartin.com]
+IN  :type => ? [INTEGER 801]
+IN  :approvalStatus => ? [INTEGER 1204]
+IN  :approvalType => ? [INTEGER null]
+IN  :approvalLevel => ? [INTEGER 705]
+IN  :scopeOfApproval => ? [VARCHAR null]
+IN  :lockheedMartinApproved => ? [INTEGER 0]
+IN  :honeywellFMTApproved => ? [INTEGER 0]
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:07:15.013
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+INSERT INTO COMPANY(COMPANY_NAMELONG, COMPANY_NAMESHORT, COMPANY_WEBSITE, COMPANY_TYPE, APPROVAL_STATUS, APPROVAL_TYPE, APPROVAL_LEVEL, APPROVAL_SCOPE, APPROVAL_LOCKHEED, APPROVAL_FMT)
+VALUES    (:name, :abbreviation, :website, :type, :approvalStatus, :approvalType, :approvalLevel, :scopeOfApproval, :lockheedMartinApproved, :honeywellFMTApproved)
+IN  :name => ? [VARCHAR Northrop Grumman Corporation]
+IN  :abbreviation => ? [VARCHAR NGCO]
+IN  :website => ? [VARCHAR www.NorthropGrumman.com]
+IN  :type => ? [INTEGER 801]
+IN  :approvalStatus => ? [INTEGER 1204]
+IN  :approvalType => ? [INTEGER null]
+IN  :approvalLevel => ? [INTEGER 705]
+IN  :scopeOfApproval => ? [VARCHAR null]
+IN  :lockheedMartinApproved => ? [INTEGER 0]
+IN  :honeywellFMTApproved => ? [INTEGER 0]
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:07:24.528
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.asd.kyros.server.alpha.DivisionService
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:07:25.559
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.asd.kyros.server.delta.CompanyLookupService
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:07:25.575
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+SELECT    COMPANY_ID,
+          COMPANY_NAMELONG
+FROM      COMPANY
+WHERE     1 = 1
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:07:32.199
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.asd.kyros.server.alpha.PartService
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:08:26.580
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+SELECT    COMPANY_ID,
+          COMPANY_NAMELONG
+FROM      COMPANY
+WHERE     1 = 1
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:08:45.123
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+INSERT INTO PART(PART_NUMBER, PART_NAME, PART_SEARCHWORD, PART_QUOTEONLY, COMPANY_COMPANY_ID)
+VALUES    (:partNumber, :name, :searchWord, :forQuoteOnly, :company)
+IN  :partNumber => ? [VARCHAR 2353547]
+IN  :name => ? [VARCHAR Carrier, MMW]
+IN  :searchWord => ? [VARCHAR null]
+IN  :forQuoteOnly => ? [INTEGER 0]
+IN  :company => ? [BIGINT 1]
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:10:41.078
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+SELECT    COMPANY_ID,
+          COMPANY_NAMELONG
+FROM      COMPANY
+WHERE     1 = 1
+          AND COMPANY_NAMELONG LIKE :text
+IN  :text => ? [VARCHAR l%]
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:11:08.794
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+INSERT INTO PART(PART_NUMBER, PART_NAME, PART_SEARCHWORD, PART_QUOTEONLY, COMPANY_COMPANY_ID)
+VALUES    (:partNumber, :name, :searchWord, :forQuoteOnly, :company)
+IN  :partNumber => ? [VARCHAR 79705666-001]
+IN  :name => ? [VARCHAR Locking Ring, Doubler, Rear Door - Outlet]
+IN  :searchWord => ? [VARCHAR Locking Ring]
+IN  :forQuoteOnly => ? [INTEGER 0]
+IN  :company => ? [BIGINT 1]
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:12:03.766
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.pool.ConnectionCloseThread.run(ConnectionCloseThread.java:33) close connection com.mysql.jdbc.JDBC4Connection@77b52050
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:12:03.767
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.pool.SqlConnectionPool.leaseConnection(SqlConnectionPool.java:104) created jdbc connection com.mysql.jdbc.JDBC4Connection@77c8becf
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:12:03.767
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+SELECT    COMPANY_ID,
+          COMPANY_NAMELONG
+FROM      COMPANY
+WHERE     1 = 1
+          AND COMPANY_NAMELONG LIKE :text
+IN  :text => ? [VARCHAR l%]
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:12:15.211
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+INSERT INTO PART(PART_NUMBER, PART_NAME, PART_SEARCHWORD, PART_QUOTEONLY, COMPANY_COMPANY_ID)
+VALUES    (:partNumber, :name, :searchWord, :forQuoteOnly, :company)
+IN  :partNumber => ? [VARCHAR OP-M9-006172]
+IN  :name => ? [VARCHAR Aluminum Witness Sample]
+IN  :searchWord => ? [VARCHAR Sample]
+IN  :forQuoteOnly => ? [INTEGER 0]
+IN  :company => ? [BIGINT 1]
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:12:47.480
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+SELECT    COMPANY_ID,
+          COMPANY_NAMELONG
+FROM      COMPANY
+WHERE     1 = 1
+          AND COMPANY_NAMELONG LIKE :text
+IN  :text => ? [VARCHAR n%]
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:12:59.342
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+INSERT INTO PART(PART_NUMBER, PART_NAME, PART_SEARCHWORD, PART_QUOTEONLY, COMPANY_COMPANY_ID)
+VALUES    (:partNumber, :name, :searchWord, :forQuoteOnly, :company)
+IN  :partNumber => ? [VARCHAR 34-110571-03]
+IN  :name => ? [VARCHAR Housing, SHR]
+IN  :searchWord => ? [VARCHAR null]
+IN  :forQuoteOnly => ? [INTEGER 0]
+IN  :company => ? [BIGINT 2]
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:13:46.470
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+SELECT    COMPANY_ID,
+          COMPANY_NAMELONG
+FROM      COMPANY
+WHERE     1 = 1
+          AND COMPANY_NAMELONG LIKE :text
+IN  :text => ? [VARCHAR n%]
+
+!ENTRY org.eclipse.scout.rt.server 1 0 2014-11-13 09:14:05.153
+!MESSAGE org.eclipse.scout.rt.server.services.common.jdbc.internal.exec.StatementProcessor.dump(StatementProcessor.java:847) 
+SQL with binds:
+INSERT INTO PART(PART_NUMBER, PART_NAME, PART_SEARCHWORD, PART_QUOTEONLY, COMPANY_COMPANY_ID)
+VALUES    (:partNumber, :name, :searchWord, :forQuoteOnly, :company)
+IN  :partNumber => ? [VARCHAR 11401110-1]
+IN  :name => ? [VARCHAR Holder, Receiver Risleys]
+IN  :searchWord => ? [VARCHAR null]
+IN  :forQuoteOnly => ? [INTEGER 0]
+IN  :company => ? [BIGINT 2]
+
+!ENTRY org.eclipse.scout.commons 1 0 2014-11-13 09:14:09.734
+!MESSAGE org.eclipse.scout.commons.ConfigIniUtility.getProperties(ConfigIniUtility.java:94) Properties for org.eclipse.scout.rt.server.services.common.security.LogoutService

@@ -1,0 +1,36 @@
+/**
+ * 
+ */
+package org.asd.kyros.shared.delta;
+
+import org.eclipse.scout.commons.exception.ProcessingException;
+import org.eclipse.scout.rt.shared.TEXTS;
+import org.eclipse.scout.rt.shared.services.common.code.AbstractCodeType;
+
+/**
+ * @author AndrewL
+ *
+ */
+public class ApprovalStatusCodeType extends AbstractCodeType<Integer, Integer>{
+
+private static final long serialVersionUID = 1L;
+/**
+ * 
+ */
+public static final Integer ID = 1200;
+
+/**
+ * @throws org.eclipse.scout.commons.exception.ProcessingException
+ */
+public ApprovalStatusCodeType() throws ProcessingException{
+super();
+}
+@Override
+protected String getConfiguredText(){
+  return TEXTS.get("ApprovalStatus");
+}
+@Override
+public Integer getId(){
+return ID;
+}
+}

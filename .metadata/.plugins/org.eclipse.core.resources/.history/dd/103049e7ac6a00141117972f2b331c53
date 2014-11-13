@@ -1,0 +1,9 @@
+package org.asd.kyros.shared.alpha;
+
+import org.eclipse.scout.rt.shared.data.form.AbstractFormData;
+
+public class ProcessFormData extends AbstractFormData{
+
+public ProcessFormData(){
+}
+}

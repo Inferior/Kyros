@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: My Application
+Bundle-SymbolicName: org.asd.kyros.ui.swt;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.asd.kyros.ui.swt.Activator
+Export-Package: org.asd.kyros.ui.swt;uses:="org.eclipse.scout.rt.ui.swt,org.eclipse.scout.rt.client.session,org.osgi.framework",
+ org.asd.kyros.ui.swt.application,
+ org.asd.kyros.ui.swt.application.menu,
+ org.asd.kyros.ui.swt.editor,
+ org.asd.kyros.ui.swt.perspective,
+ org.asd.kyros.ui.swt.views
+Require-Bundle: org.asd.kyros.client;visibility:=reexport,
+ org.asd.kyros.shared,
+ org.eclipse.scout.rt.ui.swt,
+ org.eclipse.scout.net,
+ org.eclipse.equinox.app,
+ org.eclipse.core.runtime,
+ org.eclipse.ui,
+ org.eclipse.ui.views
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

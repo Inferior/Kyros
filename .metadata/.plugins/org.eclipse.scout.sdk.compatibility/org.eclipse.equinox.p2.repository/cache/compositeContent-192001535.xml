@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?compositeMetadataRepository version='1.0.0'?>
+<repository name='&quot;Rayo Look and Feel for Eclipse Scout Update Site&quot;' type='org.eclipse.equinox.internal.p2.metadata.repository.CompositeMetadataRepository' version='1.0.0'>
+  <properties size='1'>
+    <property name='p2.timestamp' value='1361543618827'/>
+  </properties>
+  <children size='1'>
+	  <child location='RC1-20140522-1250'/>
+  </children>
+</repository>
